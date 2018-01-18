@@ -45,3 +45,4 @@ ENV SHELL=/bin/bash
 
 COPY nginx.conf   /etc/nginx/nginx.conf
 COPY port443.conf /etc/nginx/conf.d/port443.conf
+RUN  rm /etc/nginx/conf.d/default.conf
