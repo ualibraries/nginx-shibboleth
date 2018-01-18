@@ -43,5 +43,5 @@ sed -i "s/^# alias l/alias l/g" /root/.bashrc
 # Fix bash error with enabling colors:
 ENV SHELL=/bin/bash
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY ssl.conf   /etc/nginx/conf.d/ssl.conf
+COPY nginx.conf   /etc/nginx/nginx.conf
+COPY port443.conf /etc/nginx/conf.d/port443.conf
