@@ -3,8 +3,10 @@ FROM nginx:stable
 # Make apt-get commands temporarily non-interactive
 # Solution from https://github.com/phusion/baseimage-docker/issues/58
 # Update apt cache to use fastest local mirror
-RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive && \
+RUN \
+export DEBIAN_FRONTEND=noninteractive && \
+export DEBCONF_NONINTERACTIVE_SEEN=true && \
+apt-get update && \
 apt-get install -y nginx-dbg man netcat wget curl openssl nano less sudo procps git mariadb-client
 
 # Build nginx shibboleth modules, taken from
