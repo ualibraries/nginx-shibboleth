@@ -7,7 +7,7 @@ RUN \
 export DEBIAN_FRONTEND=noninteractive && \
 export DEBCONF_NONINTERACTIVE_SEEN=true && \
 apt-get update && \
-apt-get install -y nginx-dbg man netcat wget curl openssl nano less sudo procps git mariadb-client
+apt-get install -y nginx-dbg man netcat wget curl openssl nano less sudo procps git
 
 # Build nginx shibboleth modules, taken from
 # https://github.com/ConsortiumGARR/idem-tutorials/blob/master/idem-community/HOWTO-Shibboleth/Service-Provider/Debian/HOW%20TO%20SETUP%20A%20SHIBBOLETH%20SP%20WITH%20NGINX.md
@@ -34,7 +34,8 @@ RUN \
 groupadd _shibd --gid 799 && \
 useradd _shibd --uid 799 --gid 799 \
 --home /var/log/shibboleth --shell /bin/false && \
-adduser nginx _shibd
+adduser nginx _shibd && \
+adduser nginx www-data
 
 # Enable directory colors:
 RUN \
