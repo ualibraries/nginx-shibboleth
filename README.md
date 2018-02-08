@@ -8,4 +8,4 @@ The built modules are:
 
 This docker image was built using [instructions](https://github.com/ConsortiumGARR/idem-tutorials/blob/master/idem-community/HOWTO-Shibboleth/Service-Provider/Debian/HOW%20TO%20SETUP%20A%20SHIBBOLETH%20SP%20WITH%20NGINX.md) to add shibboleth integration with nginx, and making use of the [pkg-oss](https://www.nginx.com/blog/creating-installable-packages-dynamic-modules/) utility to create dynamic modules.
 
-
+The nginx user has been added to the _shibd and www-data groups, to allow integration with other docker images.
